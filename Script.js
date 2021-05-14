@@ -22,15 +22,18 @@ canvas.addEventListener("mousemove",function(e){
     }
 })
 canvas.addEventListener("touchstart",function(e){
+    e.preventDefault()
     tool.beginPath()
     isMouseDown=true
     tool.moveTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
 })
 canvas.addEventListener("touchend",function(e){
+    e.preventDefault()
     isMouseDown=false
 })
 canvas.addEventListener("touchmove",function(e){
     if(isMouseDown){
+        e.preventDefault()
         tool.lineTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
         tool.stroke()
     }
