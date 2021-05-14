@@ -47,9 +47,9 @@ for(let i =0;i< options.length;i++){
         if (name == "eraser"){
             tool.strokeStyle = document.getElementById("colorpicker2").value;
         }else if(name == "pencil"){
-            tool.strokeStyle= document.getElementById("colorpicker1").value;
+            tool.strokeStyle= document.getElementById("colorpicker").value;
         }else if(name =="black1"){
-            tool.lineWidth=0
+            tool.lineWidth=0.5
         }
         else if(name =="black2"){
             tool.lineWidth=7
@@ -69,8 +69,6 @@ for(let i =0;i< options.length;i++){
             console.log(backRGB)
             tool.fillStyle = backRGB
             tool.fillRect(0, 0, canvas.width, canvas.height);
-            tool.strokeStyle = backRGB
-            document.getElementById("colorpicker").value=backRGB
             }
         }
     })
