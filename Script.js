@@ -6,7 +6,7 @@ let tool = canvas.getContext("2d");
 let isMouseDown = false
 // tool.fillStyle="black"
 // tool.fillRect(0,0,canvas.height/2,canvas.width/2)
-tool.strokeStyle="black"
+tool.strokeStyle="#800000"
 canvas.addEventListener("mousedown",function(e){
     tool.beginPath()
     isMouseDown=true
@@ -45,9 +45,23 @@ for(let i =0;i< options.length;i++){
         let option = e.currentTarget
         let name = option.getAttribute("id")
         if (name == "eraser"){
-            tool.strokeStyle= "white"
+            tool.strokeStyle = "white"
         }else if(name == "pencil"){
             tool.strokeStyle="black"
+        }else if(name =="black1"){
+            tool.lineWidth=0
+        }
+        else if(name =="black2"){
+            tool.lineWidth=7
+        }
+        else if(name =="black3"){
+            tool.lineWidth=20
+        }else{
+            var backRGB = document.getElementById("colorpicker").value;
+            document.getElementById("colorpicker").onchange = function() {
+            backRGB = this.value
+            tool.strokeStyle=backRGB
+            }
         }
     })
 }

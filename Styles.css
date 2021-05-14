@@ -1,14 +1,44 @@
 *{
     margin: 0;
 }
+body{
+    height: 50%;
+    width: 50%;
+}
+
 .tool-bar{
+    margin :10px;
     background-color: wheat;
     height: 4rem;
     display: flex;
-    border-radius: 10;
 }
 .tool-bar img{
     height: 80%;
     margin: 10%;
+}
+
+.bh #black1{
+    margin-left: 30px;
+    height: 30%;
+    align-content: bottom;
+    margin-top: 25px;
+
+}
+.bh #black2{
+    height: 40%;
+    align-content: bottom;
+    margin-top: 19px;
+
+}
+.bh #black3{
+    height: 60%;
+    align-content: bottom;
+    margin-top: 13px;
+}
+.bh #colorpicker{
+    margin-left: 30px;
+    height: 60%;
+    align-content: bottom;
+    margin-top: 13px;
 }
 
