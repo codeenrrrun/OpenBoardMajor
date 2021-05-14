@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+.tool-bar{
+    background-color: wheat;
+    height: 6rem;
+    display: flex;
+    border-radius: 10;
+}
+.tool-bar img{
+    height: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
