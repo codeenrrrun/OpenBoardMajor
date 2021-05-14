@@ -26,10 +26,10 @@ canvas.addEventListener("touchstart",function(e){
     isMouseDown=true
     tool.moveTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
 })
-canvas.addEventListener("touchmove",function(e){
+canvas.addEventListener("touchend",function(e){
     isMouseDown=false
 })
-canvas.addEventListener("touchend",function(e){
+canvas.addEventListener("touchmove",function(e){
     if(isMouseDown){
         tool.lineTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
         tool.stroke()
