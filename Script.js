@@ -1,12 +1,12 @@
 let canvas = document.querySelector("canvas")
 canvas.height = window.innerHeight
-canvas.width= window.innerWidth
-
+canvas.width= window.innerWidth/1.45
 let tool = canvas.getContext("2d");
 let isMouseDown = false
+tool.strokeStyle="#800000"
+
 // tool.fillStyle="black"
 // tool.fillRect(0,0,canvas.height/2,canvas.width/2)
-tool.strokeStyle="#800000"
 canvas.addEventListener("mousedown",function(e){
     tool.beginPath()
     isMouseDown=true
@@ -45,9 +45,9 @@ for(let i =0;i< options.length;i++){
         let option = e.currentTarget
         let name = option.getAttribute("id")
         if (name == "eraser"){
-            tool.strokeStyle = "white"
+            tool.strokeStyle = document.getElementById("colorpicker2").value;
         }else if(name == "pencil"){
-            tool.strokeStyle="black"
+            tool.strokeStyle= document.getElementById("colorpicker1").value;
         }else if(name =="black1"){
             tool.lineWidth=0
         }
@@ -56,11 +56,21 @@ for(let i =0;i< options.length;i++){
         }
         else if(name =="black3"){
             tool.lineWidth=20
-        }else{
+        }else if(name =="colorpicker"){
             var backRGB = document.getElementById("colorpicker").value;
             document.getElementById("colorpicker").onchange = function() {
             backRGB = this.value
             tool.strokeStyle=backRGB
+            }
+        }else if(name =="colorpicker2"){
+            var backRGB = document.getElementById("colorpicker2").value;
+            document.getElementById("colorpicker2").onchange = function() {
+            backRGB = this.value
+            console.log(backRGB)
+            tool.fillStyle = backRGB
+            tool.fillRect(0, 0, canvas.width, canvas.height);
+            tool.strokeStyle = backRGB
+            document.getElementById("colorpicker").value=backRGB
             }
         }
     })
