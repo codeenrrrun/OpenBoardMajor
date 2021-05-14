@@ -21,6 +21,20 @@ canvas.addEventListener("mousemove",function(e){
         tool.stroke()
     }
 })
+canvas.addEventListener("touchstart",function(e){
+    tool.beginPath()
+    isMouseDown=true
+    tool.moveTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
+})
+canvas.addEventListener("touchmove",function(e){
+    isMouseDown=false
+})
+canvas.addEventListener("touchend",function(e){
+    if(isMouseDown){
+        tool.lineTo(e.touches[0].clientX,getCoordinatesy(e.touches[0].clientY))
+        tool.stroke()
+    }
+})
 let options = document.querySelectorAll(".tool")
 for(let i =0;i< options.length;i++){
     options[i].addEventListener("click",function(e){
