@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Open Board.io</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <div class="btn-group btn-group-toggle ml-4" data-toggle="buttons" >
+                    <label class="btn btn-secondary active" >
+                      <div class = "tool" id="pencil">
+                      <input type="radio" name="options" autocomplete="off" checked> Draw
+                      </div>
+                    </label>
+                    <label class="btn btn-secondary">
+                        <div class = "tool"  id="eraser">
+                      <input type="radio" name="options" id="option2" autocomplete="off"> Erase
+                    </div>
+
+                    </label>
+                    <label class="btn btn-secondary">
+                        <div class = "tool">
+
+                      <input type="radio" name="options" id="option3" autocomplete="off"> Save
+                    </div>
+
+                    </label>
+                  </div>
+            </li>
+
+            <li class="nav-item dropdown ml-4">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Size
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a  class="dropdown-item tool"  id="black1" href="#">Small</a>
+                <div class="dropdown-divider"></div>
+
+                <a  class="dropdown-item tool"  id="black2" href="#">Medium</a>
+                <div class="dropdown-divider"></div>
+                <a  class="dropdown-item tool" id="black3" href="#">Large</a>
+              </div>
+            </li>
+            <li>
+            <div class ="bh ml-4" class = ".text-white">
+                <label for="colorpicker" ><span class = ".text-white ">Pencil Color</span></label>
+                <input class = "tool ml-2" type="color"  value="#800000" id="colorpicker">
+            </div>
+
+            <div class ="bh ml-4" >
+                <label for="colorpicker">Background</label>
+                <input class = "tool ml-2" type="color" id="colorpicker2" value="#e9e5de">
+            </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <!-- canvas Tag -->
+        
+    </div>
+    <canvas></canvas>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js" crossorigin></script>
+    <script src="Script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect("http://localhost:3000");
+      console.log("connected");
+    </script>
+
+</body>
+</html>
